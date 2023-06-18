@@ -4,7 +4,8 @@ const MongoClient = mongodb.MongoClient;
 let _db;
 
 const mongoConnect = callback => {
-  MongoClient.connect('mongodb+srv://amruthkrishnaa:<password>@cluster0.xmrjhkp.mongodb.net/?retryWrites=true&w=majority'
+  MongoClient.connect(
+    process.env.stringmongo
   )
     .then(client => {
       console.log('Connected!');
@@ -23,6 +24,6 @@ const getDb = () => {
   }
   throw 'No database found!';
 };
-//connection
+
 exports.mongoConnect = mongoConnect;
 exports.getDb = getDb;
