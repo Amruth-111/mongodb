@@ -33,15 +33,14 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 mongoose
-  .connect(
-    process.env.string
+  .connect(process.env.string
   )
   .then(result => {
     User.findOne().then(user => {
       if (!user) {
         const user = new User({
-          name: 'Max',
-          email: 'max@test.com',
+          name: 'amruth',
+          email: 'amruth@gmail.com',
           cart: {
             items: []
           }
